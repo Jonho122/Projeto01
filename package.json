@@ -1,0 +1,16 @@
+{
+  "name": "projeto01",
+  "version": "1.0.0",
+  "description": "When you're ready, start your application by running: `docker compose up --build`.",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+  "watch": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch"},
+  "dependencies": {
+  "tailwindcss": "^4",
+  "@tailwindcss/cli": "^4"
+}
+  
+}
