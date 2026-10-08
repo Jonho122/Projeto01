@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Planejador de Economia Pessoal</title>
+  <link rel="stylesheet" href="./output.css">
+  <!--Um único script, com caminho "./script.js" e o atributo defer. -->
+  <script src="./script.js" defer></script>
+</head>
+<body class="bg-emerald-50 text-emerald-950 leading-relaxed">
+
+  <!-- A página só pode ter UM h1. Os demais títulos usam h2 e h3, nessa ordem. -->
+  <header class="bg-emerald-900 text-white">
+    <div class="mx-auto flex max-w-5xl flex-col gap-4 px-4 py-6 md:flex-row md:items-center md:justify-between">
+      <div>
+        <h1 class="text-2xl font-bold md:text-3xl">Planejador de Economia Pessoal</h1>
+        <p class="text-sm text-emerald-100">Acompanhe seus depósitos e veja o quanto falta para a meta.</p>
+      </div>
+      <!-- Cada href do menu precisa ter um id igual em alguma section (ex.: href="#dicas" -> id="dicas").
+           Mínimo exigido: 3 links internos. -->
+      <nav aria-label="Navegação principal">
+        <ul class="flex flex-wrap gap-4 font-medium">
+          <li><a href="#proposito" class="rounded underline-offset-4 hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-300">Propósito</a></li>
+          <li><a href="#dicas" class="rounded underline-offset-4 hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-300">Dicas</a></li>
+          <li><a href="#resultados" class="rounded underline-offset-4 hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-300">Resultados</a></li>
+          <li><a href="#dados" class="rounded underline-offset-4 hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-300">Dados</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="mx-auto flex max-w-5xl flex-col gap-10 px-4 py-8">
+
+    <section id="proposito" aria-labelledby="t-proposito">
+      <h2 id="t-proposito" class="mb-2 text-2xl font-semibold">Para que serve</h2>
+      <p class="max-w-prose">
+        Esta página reúne seis valores guardados em depósitos recentes e os compara com uma meta de economia.
+        A referência usada é uma <strong>meta de <span id="meta-texto">R$ 0,00</span></strong> e um
+        <strong>depósito mínimo de <span id="minimo-texto">R$ 0,00</span></strong>. O progresso é classificado
+        como Iniciando (abaixo de 50% da meta), No caminho (de 50% a 99%) ou Meta atingida (100% ou mais).
+      </p>
+    </section>
+
+    <section id="dicas" aria-labelledby="t-dicas">
+      <h2 id="t-dicas" class="mb-4 text-2xl font-semibold">Dicas de organização financeira</h2>
+      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <article class="rounded-lg border border-emerald-200 bg-white p-4 shadow-sm">
+          <h3 class="mb-1 font-semibold">Pague-se primeiro</h3>
+          <p class="text-sm">Separe a economia assim que o dinheiro entrar, antes de gastar.</p>
+        </article>
+        <article class="rounded-lg border border-emerald-200 bg-white p-4 shadow-sm">
+          <h3 class="mb-1 font-semibold">Regra 50/30/20</h3>
+          <p class="text-sm">50% para necessidades, 30% para desejos e 20% para poupar.</p>
+        </article>
+        <article class="rounded-lg border border-emerald-200 bg-white p-4 shadow-sm">
+          <h3 class="mb-1 font-semibold">Reserva de emergência</h3>
+          <p class="text-sm">Guarde o equivalente a 3 a 6 meses de gastos essenciais.</p>
+        </article>
+        <article class="rounded-lg border border-emerald-200 bg-white p-4 shadow-sm">
+          <h3 class="mb-1 font-semibold">Anote seus gastos</h3>
+          <p class="text-sm">Registrar tudo mostra para onde o dinheiro realmente vai.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ATENÇÃO: NÃO renomeie os ids "resultado-...", "rotulo-diferenca", "meta-texto", "minimo-texto" e "valor-1" a "valor-6".
+         O script.js procura esses ids para escrever os valores com textContent. O "-" é só um valor provisório. -->
+    <section id="resultados" aria-labelledby="t-resultados">
+      <h2 id="t-resultados" class="mb-4 text-2xl font-semibold">Resultados</h2>
+      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <article class="rounded-lg border border-emerald-200 bg-white p-4 shadow-sm">
+          <h3 class="text-sm text-emerald-800">Total guardado</h3>
+          <p id="resultado-total" class="text-2xl font-bold">-</p>
+        </article>
+        <article class="rounded-lg border border-emerald-200 bg-white p-4 shadow-sm">
+          <h3 class="text-sm text-emerald-800">Média por depósito</h3>
+          <p id="resultado-media" class="text-2xl font-bold">-</p>
+        </article>
+        <article class="rounded-lg border border-emerald-200 bg-white p-4 shadow-sm">
+          <h3 class="text-sm text-emerald-800">Depósitos que atingiram o mínimo</h3>
+          <p id="resultado-minimo" class="text-2xl font-bold">-</p>
+        </article>
+        <article class="rounded-lg border border-emerald-200 bg-white p-4 shadow-sm">
+          <h3 id="rotulo-diferenca" class="text-sm text-emerald-800">Falta para a meta</h3>
+          <p id="resultado-diferenca" class="text-2xl font-bold">-</p>
+        </article>
+        <article class="rounded-lg border border-emerald-200 bg-white p-4 shadow-sm">
+          <h3 class="text-sm text-emerald-800">Percentual da meta</h3>
+          <p id="resultado-percentual" class="text-2xl font-bold">-</p>
+        </article>
+        <article class="rounded-lg border-2 border-emerald-700 bg-emerald-100 p-4 shadow-sm">
+          <h3 class="text-sm text-emerald-800">Classificação do progresso</h3>
+          <p id="resultado-classificacao" class="text-2xl font-bold">-</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ATENÇÃO: os seis valores NÃO são digitados aqui. Para mudar os depósitos, a meta ou o mínimo,
+         edite o array "depositos" e as constantes no topo do script.js. -->
+    <section id="dados" aria-labelledby="t-dados">
+      <h2 id="t-dados" class="mb-2 text-2xl font-semibold">Os seis depósitos analisados</h2>
+      <p class="mb-4 max-w-prose">Cada valor abaixo é um depósito feito na poupança, em reais. Eles são a base de todos os cálculos.</p>
+      <ul class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        <li class="flex items-center justify-between rounded-lg border border-emerald-200 bg-white px-4 py-3"><span>Depósito 1</span><strong id="valor-1">-</strong></li>
+        <li class="flex items-center justify-between rounded-lg border border-emerald-200 bg-white px-4 py-3"><span>Depósito 2</span><strong id="valor-2">-</strong></li>
+        <li class="flex items-center justify-between rounded-lg border border-emerald-200 bg-white px-4 py-3"><span>Depósito 3</span><strong id="valor-3">-</strong></li>
+        <li class="flex items-center justify-between rounded-lg border border-emerald-200 bg-white px-4 py-3"><span>Depósito 4</span><strong id="valor-4">-</strong></li>
+        <li class="flex items-center justify-between rounded-lg border border-emerald-200 bg-white px-4 py-3"><span>Depósito 5</span><strong id="valor-5">-</strong></li>
+        <li class="flex items-center justify-between rounded-lg border border-emerald-200 bg-white px-4 py-3"><span>Depósito 6</span><strong id="valor-6">-</strong></li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- ATENÇÃO: TROQUE "NOME DO ALUNO 1", "NOME DO ALUNO 2" e "NOME DA TURMA" pelos dados reais da dupla.
+       O professor exige integrantes e turma no rodapé. -->
+  <footer class="border-t-4 border-emerald-700 bg-emerald-900 text-emerald-50">
+    <div class="mx-auto max-w-5xl px-4 py-6 text-sm">
+      <p>Integrantes: <strong>NOME DO ALUNO 1</strong> e <strong>NOME DO ALUNO 2</strong></p>
+      <p>Turma: <strong>NOME DA TURMA</strong></p>
+    </div>
+  </footer>
+
+</body>
+</html>
