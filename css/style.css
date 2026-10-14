@@ -1,0 +1,55 @@
+/* style.css - Cores personalizadas do projeto */
+
+:root {
+  --cor-principal: #064e3b;      /* Verde escuro elegante */
+  --cor-secundaria: #047857;     /* Verde vibrante */
+  --cor-fundo-site: #f8fafc;     /* Cinza bem claro para o fundo */
+  --cor-texto-principal: #1e293b;/* Cinza escuro para os textos */
+  --cor-texto-suave: #64748b;    /* Cinza médio para descrições */
+  --cor-card-fundo: #ffffff;     /* Branco para os cartões */
+  --cor-destaque: #ffb703;       /* Amarelo/Dourado de destaque */
+}
+
+/* Aplicando as cores globais aos elementos principais */
+body {
+  background-color: var(--cor-fundo-site);
+  color: var(--cor-texto-principal);
+}
+
+header {
+  background-color: var(--cor-principal);
+  color: #ffffff;
+}
+
+header a {
+  color: #ffffff;
+}
+
+header a:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Seções e Cartões */
+section h2 {
+  color: var(--cor-principal);
+}
+
+section p, section span {
+  color: var(--cor-texto-suave);
+}
+
+section article, section li {
+  background-color: var(--cor-card-fundo);
+  border-color: #e2e8f0;
+}
+
+/* Rodapé */
+footer {
+  background-color: var(--cor-principal);
+  border-color: var(--cor-secundaria);
+  color: #ffffff;
+}
+
+footer strong {
+  color: #ffffff;
+}
