@@ -6,11 +6,12 @@
   <title>Planejador de Economia Pessoal</title>
   <link rel="stylesheet" href="../css/output.css">
   <link rel="stylesheet" href="../css/style.css">
+  <!--Um único script, com caminho "./script.js" e o atributo defer. -->
   <script src="./script.js" defer></script>
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased selection:bg-emerald-600 selection:text-white">
 
-
+  <!-- A página só pode ter UM h1. Os demais títulos usam h2 e h3, nessa ordem. -->
   <header class="shadow-lg sticky top-0 z-50 backdrop-blur-md bg-opacity-95">
     <div class="mx-auto flex max-w-5xl flex-col gap-4 px-6 py-6 md:flex-row md:items-center md:justify-between">
       <div>
@@ -94,12 +95,17 @@
       </div>
     </section>
 
-    <!-- ATENÇÃO: os seis valores NÃO são digitados aqui. Para mudar os depósitos, a meta ou o mínimo,
-         edite o array "depositos" e as constantes no topo do script.js. -->
     <section id="dados" aria-labelledby="t-dados">
       <h2 id="t-dados" class="mb-2 text-2xl font-bold tracking-tight">Os seis depósitos analisados</h2>
       <p class="mb-6 max-w-prose">Cada valor abaixo é um depósito feito na poupança, em reais. Eles são a base de todos os cálculos.</p>
-      <ul id="lista-depositos" class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3"></ul>
+      <ul class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <li class="flex items-center justify-between rounded-xl border px-5 py-4 shadow-sm transition-all hover:shadow-md"><span>Depósito 1</span><strong id="valor-1" class="text-lg font-bold">-</strong></li>
+        <li class="flex items-center justify-between rounded-xl border px-5 py-4 shadow-sm transition-all hover:shadow-md"><span>Depósito 2</span><strong id="valor-2" class="text-lg font-bold">-</strong></li>
+        <li class="flex items-center justify-between rounded-xl border px-5 py-4 shadow-sm transition-all hover:shadow-md"><span>Depósito 3</span><strong id="valor-3" class="text-lg font-bold">-</strong></li>
+        <li class="flex items-center justify-between rounded-xl border px-5 py-4 shadow-sm transition-all hover:shadow-md"><span>Depósito 4</span><strong id="valor-4" class="text-lg font-bold">-</strong></li>
+        <li class="flex items-center justify-between rounded-xl border px-5 py-4 shadow-sm transition-all hover:shadow-md"><span>Depósito 5</span><strong id="valor-5" class="text-lg font-bold">-</strong></li>
+        <li class="flex items-center justify-between rounded-xl border px-5 py-4 shadow-sm transition-all hover:shadow-md"><span>Depósito 6</span><strong id="valor-6" class="text-lg font-bold">-</strong></li>
+      </ul>
     </section>
 
   </main>
@@ -107,6 +113,7 @@
   <footer class="border-t-4 mt-16 shadow-inner">
     <div class="mx-auto max-w-5xl px-6 py-8 text-sm flex flex-col md:flex-row justify-between items-center gap-4">
       <p>Integrantes: <strong class="underline">John Kevin</strong> e <strong class="underline">Ketson Matheus</strong></p>
+      <p>Professor: <strong class="underline">Luciano Alexandre</strong></p>
       <p class="px-4 py-2 rounded-lg font-medium">Turma: <strong>TSI</strong></p>
     </div>
   </footer>
