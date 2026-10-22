@@ -1,16 +1,14 @@
 /* style.css - Cores personalizadas do projeto */
 
 :root {
-  --cor-principal: #064e3b;      /* Verde escuro elegante */
-  --cor-secundaria: #047857;     /* Verde vibrante */
-  --cor-fundo-site: #f8fafc;     /* Cinza bem claro para o fundo */
-  --cor-texto-principal: #1e293b;/* Cinza escuro para os textos */
-  --cor-texto-suave: #64748b;    /* Cinza médio para descrições */
-  --cor-card-fundo: #ffffff;     /* Branco para os cartões */
-  --cor-destaque: #ffb703;       /* Amarelo/Dourado de destaque */
+  --cor-principal: #064e3b;     
+  --cor-secundaria: #047857;   
+  --cor-fundo-site: #f8fafc;   
+  --cor-texto-principal: #1e293b;
+  --cor-texto-suave: #64748b;   
+  --cor-card-fundo: #ffffff;       
 }
 
-/* Aplicando as cores globais aos elementos principais */
 body {
   background-color: var(--cor-fundo-site);
   color: var(--cor-texto-principal);
@@ -29,7 +27,13 @@ header a:hover {
   background-color: rgba(255, 255, 255, 0.15);
 }
 
-/* Seções e Cartões */
+
+::selection {
+  background-color: var(--cor-secundaria);
+  color: #ffffff;
+}
+
+
 section h2 {
   color: var(--cor-principal);
 }
@@ -38,12 +42,14 @@ section p, section span {
   color: var(--cor-texto-suave);
 }
 
-section article, section li {
+section article, section li, section#proposito {
   background-color: var(--cor-card-fundo);
   border-color: #e2e8f0;
 }
+section article p[id^="resultado-"] {
+  color: var(--cor-principal);
+}
 
-/* Rodapé */
 footer {
   background-color: var(--cor-principal);
   border-color: var(--cor-secundaria);
@@ -52,4 +58,13 @@ footer {
 
 footer strong {
   color: #ffffff;
+}
+html {
+  scroll-padding-top: 9rem;
+}
+
+@media (max-width: 767px) {
+  html {
+    scroll-padding-top: 14rem;
+  }
 }
